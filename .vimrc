@@ -11,7 +11,6 @@
 "       ░   ░  ░      ░       ░  ░       ░    ░     ░     
 "                   ░                                     
 
-
 call plug#begin('~/.vim/plugged')
 
     Plug 'vim-airline/vim-airline'
@@ -25,6 +24,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf'
     Plug 'jceb/vim-orgmode'
     Plug 'tpope/vim-speeddating'
+    Plug 'fatih/vim-go'
+    Plug 'sharkdp/bat'
 
 call plug#end()
 
