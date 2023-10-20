@@ -1,74 +1,109 @@
 " Author: mkdemir
 
-"  ███▄ ▄███▓ ██ ▄█▀▓█████▄ ▓█████  ███▄ ▄███▓ ██▓ ██▀███  
-" ▓██▒▀█▀ ██▒ ██▄█▒ ▒██▀ ██▌▓█   ▀ ▓██▒▀█▀ ██▒▓██▒▓██ ▒ ██▒
-" ▓██    ▓██░▓███▄░ ░██   █▌▒███   ▓██    ▓██░▒██▒▓██ ░▄█ ▒
-" ▒██    ▒██ ▓██ █▄ ░▓█▄   ▌▒▓█  ▄ ▒██    ▒██ ░██░▒██▀▀█▄  
-" ▒██▒   ░██▒▒██▒ █▄░▒████▓ ░▒████▒▒██▒   ░██▒░██░░██▓ ▒██▒
-" ░ ▒░   ░  ░▒ ▒▒ ▓▒ ▒▒▓  ▒ ░░ ▒░ ░░ ▒░   ░  ░░▓  ░ ▒▓ ░▒▓░
-" ░  ░      ░░ ░▒ ▒░ ░ ▒  ▒  ░ ░  ░░  ░      ░ ▒ ░  ░▒ ░ ▒░
-" ░      ░   ░ ░░ ░  ░ ░  ░    ░   ░      ░    ▒ ░  ░░   ░ 
+" ███▄ ▄███▓ ██ ▄█▀▓█████▄ ▓█████  ███▄ ▄███▓ ██▓ ██▀███  
+"▓██▒▀█▀ ██▒ ██▄█▒ ▒██▀ ██▌▓█   ▀ ▓██▒▀█▀ ██▒▓██▒▓██ ▒ ██▒
+"▓██    ▓██░▓███▄░ ░██   █▌▒███   ▓██    ▓██░▒██▒▓██ ░▄█ ▒
+"▒██    ▒██ ▓██ █▄ ░▓█▄   ▌▒▓█  ▄ ▒██    ▒██ ░██░▒██▀▀█▄  
+"▒██▒   ░██▒▒██▒ █▄░▒████▓ ░▒████▒▒██▒   ░██▒░██░░██▓ ▒██▒
+"░ ▒░   ░  ░▒ ▒▒ ▓▒ ▒▒▓  ▒ ░░ ▒░ ░░ ▒░   ░  ░░▓  ░ ▒▓ ░▒▓░
+"░  ░      ░░ ░▒ ▒░ ░ ▒  ▒  ░ ░  ░░  ░      ░ ▒ ░  ░▒ ░ ▒░
+"░      ░   ░ ░░ ░  ░ ░  ░    ░   ░      ░    ▒ ░  ░░   ░ 
 "       ░   ░  ░      ░       ░  ░       ░    ░     ░     
 "                   ░                                     
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
     Plug 'vim-airline/vim-airline'
-    Plug 'plasticboy/vim-markdown'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'scrooloose/nerdtree'
-    Plug 'morhetz/gruvbox'
-    Plug 'conradirwin/vim-bracketed-paste'
-    Plug 'google/vim-jsonnet'
-    Plug 'ervandew/supertab'
-    Plug 'edkolev/tmuxline.vim'
-    Plug 'junegunn/fzf'
-    Plug 'jceb/vim-orgmode'
-    Plug 'tpope/vim-speeddating'
     Plug 'fatih/vim-go'
-    Plug 'sharkdp/bat'
+    Plug 'jceb/vim-orgmode'
+    Plug 'tyru/open-browser.vim'
+    Plug 'plasticboy/vim-markdown'
+	Plug 'kien/ctrlp.vim'
+	Plug 'w0rp/ale'
+	Plug 'morhetz/gruvbox'
+	Plug 'majutsushi/tagbar'	
+	Plug 'tyru/open-browser.vim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'vim-scripts/ZoomWin'
+    Plug 'pprovost/vim-ps1'
 
 call plug#end()
 
+"=====================================================
+"===================== SETTINGS ======================
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#highlight#buffer_selected = 'bg=darkgreen'
+let g:airline_left_sep = 'mkdemir'
+" let g:airline_right_sep = '<'
+
+set laststatus=2
+set encoding=utf-8 
+set fileencoding=utf-8
+set autoread
+set autowrite
+set autoindent
+set backspace=indent,eol,start
+set incsearch
+set hlsearch
+set mouse=a
+
+set noerrorbells
 set number
 set relativenumber
+set showcmd
+set noswapfile
+set nobackup
+set splitright 
+set splitbelow 
+set hidden
+set fileformats=unix,dos,mac
+set noshowmatch
+set noshowmode
+set ignorecase
+set smartcase
+set completeopt=menu,menuone
+set nocursorcolumn
+set nocursorline
+
+set lazyredraw
+
+" increase max memory to show syntax highlighting for large files
+set maxmempattern=20000
+
+set viminfo='1000
+
+set undofile
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set mouse=a
-set autoindent
-set smartindent
-set showmatch
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set laststatus=2
-set termguicolors
-set lazyredraw
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,default,latin1
-set termencoding=utf-8
-set guifont=Consolas:h11
 
-set updatetime=300
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+""  set guifont=Inconsolata:h12
+set guifont=Consolas:h10
 
-nnoremap <F2> :set nu!<CR>
-nnoremap <F3> :set wrap!<CR>
+colorscheme gruvbox
+"colorscheme desert
+syntax enable
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_contrast_light = "soft"
+
+" windows (gvim)
+set guioptions-=m  "menu bar
+set guioptions-=T  "toolbar
+set guioptions-=r  "scrollbar"
+set clipboard=unnamed
+"set clipboard=unnamedplus
+
+" nerdtree config
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-set background=light
-let g:gruvbox_italic = 0
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_light = 'hard'
-let g:gruvbox_invert_selection = 1
-let g:gruvbox_italicize_comments = 0
-colorscheme gruvbox
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#whitespace#enabled = 1
-let g:airline_theme = 'gruvbox'
+let g:ps1_nofold_blocks = 1
